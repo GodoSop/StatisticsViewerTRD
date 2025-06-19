@@ -52,7 +52,7 @@ local StatisticPicker = Tab:CreateDropdown({
 			statisticname = "Coins"
 		end
 		if Options[1] == "Camp Wins" then
-			statistic = "Camp Wins"
+			statistic = "CampWins"
 		end
 		if Options[1] == "Movies Wins" then
 			statistic = "MoviesWins"
