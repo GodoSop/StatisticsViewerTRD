@@ -111,7 +111,7 @@ local NameToStatistic = Tab:CreateInput({
 		else
 			Rayfield:Notify({
 				Title = "Statistics Notification",
-				Content = Text .. "'s " .. statisticname .. " statistic is " .. tostring(Players:FindFirstChild(target).DataStore[statistic].Value),
+				Content = tostring(Players:FindFirstChild(target).DataStore[statistic].Value),
 				Duration = 4,
 				Image = 4483362458,
 			})
