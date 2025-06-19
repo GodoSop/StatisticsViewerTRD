@@ -53,31 +53,24 @@ local StatisticPicker = Tab:CreateDropdown({
 		end
 		if Options[1] == "Camp Wins" then
 			statistic = "Camp Wins"
-			statisticname = "Camp Wins"
 		end
 		if Options[1] == "Movies Wins" then
 			statistic = "MoviesWins"
-			statisticname = "Movies Wins"
 		end
 		if Options[1] == "Expedition Wins" then
 			statistic = "ExpeditionWins"
-			statisticname = "Expedition Wins"
 		end
 		if Options[1] == "Games Played" then
 			statistic = "GamesPlayed"
-			statisticname = "Games Played"
 		end
 		if Options[1] == "Idols Found" then
 			statistic = "IdolsFound"
-			statisticname = "Idols Found"
 		end
 		if Options[1] == "Comeback Wins" then
 			statistic = "ComebackWins"
-			statisticname= "Comeback Wins"
 		end
 		if Options[1] == "Challenge Wins" then
 			statistic = "ChallengeWins"
-			statisticname = "Challenge Wins"
 		end
 	end,
 })
@@ -92,11 +85,10 @@ local NameToStatistic = Tab:CreateInput({
 		local RS = game:GetService("ReplicatedStorage")
 		local Players = game:GetService("Players")
 		local Characters = RS.Season.Players:GetChildren()
-		local name = Text
 		local target = nil
 
 		for _, plr in ipairs(Characters) do
-			if string.lower(plr.Value) == string.lower(name) then
+			if string.lower(plr.Value) == string.lower(Text) then
 				target = plr.Name
 				break
 			end
