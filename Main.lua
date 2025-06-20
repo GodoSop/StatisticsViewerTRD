@@ -40,39 +40,60 @@ local Window = Rayfield:CreateWindow({
 
 local Tab = Window:CreateTab("Main Tab", 4483362458) -- Title, Image
 
-local StatisticPicker = Tab:CreateDropdown({
-	Name = "Select a statistic.",
-	Options = {"Coins","Camp Wins", "Movies Wins", "Expedition Wins", "Games Played", "Idols Found", "Comeback Wins", "Challenge Wins"},
-	CurrentOption = {"Coins"},
-	MultipleOptions = false,
-	Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-	Callback = function(Options)
-		if Options[1] == "Coins" then
-			statistic = "Coins"
-			statisticname = "Coins"
-		end
-		if Options[1] == "Camp Wins" then
-			statistic = "CampWins"
-		end
-		if Options[1] == "Movies Wins" then
-			statistic = "MoviesWins"
-		end
-		if Options[1] == "Expedition Wins" then
-			statistic = "ExpeditionWins"
-		end
-		if Options[1] == "Games Played" then
-			statistic = "GamesPlayed"
-		end
-		if Options[1] == "Idols Found" then
-			statistic = "IdolsFound"
-		end
-		if Options[1] == "Comeback Wins" then
-			statistic = "ComebackWins"
-		end
-		if Options[1] == "Challenge Wins" then
-			statistic = "ChallengeWins"
-		end
-	end,
+local Coins = Tab:CreateButton({
+   Name = "Set statistic to Coins",
+   Callback = function()
+      statistic = "Coins"
+   end,
+})
+
+local CampWins = Tab:CreateButton({
+   Name = "Set statistic to Camp Wins",
+   Callback = function()
+      statistic = "CampWins"
+   end,
+})
+
+local MoviesWins = Tab:CreateButton({
+   Name = "Set statistic to Movies Wins",
+   Callback = function()
+      statistic = "MoviesWins"
+   end,
+})
+
+local ExpeditionWins = Tab:CreateButton({
+   Name = "Set statistic to Expedition Wins",
+   Callback = function()
+      statistic = "ExpeditionWins"
+   end,
+})
+
+local GamesPlayed = Tab:CreateButton({
+   Name = "Set statistic to Games Played",
+   Callback = function()
+      statistic = "GamesPlayed"
+   end,
+})
+
+local IdolsFound = Tab:CreateButton({
+   Name = "Set statistic to Idols Found",
+   Callback = function()
+      statistic = "IdolsFound"
+   end,
+})
+
+local ComebackWins = Tab:CreateButton({
+   Name = "Set statistic to Comeback Wins",
+   Callback = function()
+      statistic = "ComebackWins"
+   end,
+})
+
+local ChallengeWins = Tab:CreateButton({
+   Name = "Set statistic to Challenge Wins",
+   Callback = function()
+      statistic = "ChallengeWins"
+   end,
 })
 
 local NameToStatistic = Tab:CreateInput({
