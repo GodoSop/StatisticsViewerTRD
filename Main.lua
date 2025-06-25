@@ -1,4 +1,5 @@
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/SiriusSoftwareLtd/Rayfield/main/source.lua'))()
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
 local statistic = nil
 local statisticname = ""
 
@@ -135,25 +136,207 @@ local NameToStatistic = Tab:CreateInput({
 local BestTab = Window:CreateTab("Misc", 4483362458) -- Title, Image
 
 local MostCoins = BestTab:CreateButton({
-	Name = "Button Example",
+	Name = "Reveal who has the most Coins",
 	Callback = function()
-		local MostStatistic = "Coins"
+		local Most = "Coins"
 		local Players = game:GetService("Players")
 		local RS = game:GetService("ReplicatedStorage")
 		local Characters = RS.Season.Players:GetChildren()
 		local MostAmount = 0
 		local MostPlayer = "Nobody"
 		
-		for _, character in ipairs(Characters) do
-			if Players:FindFirstChild(character.Name):WaitForChild('DataStore')[MostStatistic].Value > MostAmount then
-				MostAmount = Players:FindFirstChild(character.Name):WaitForChild('DataStore')[MostStatistic].Value
-				MostPlayer = character.Value
+		for i =1, #Characters do
+			if Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value > MostAmount then
+				MostAmount = Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value
+				MostPlayer = Characters[i].Value
 			end
 		end
 		
 		Rayfield:Notify({
-			Title = "Statistics Notification",
-			Content = MostPlayer .. " has " .. tostring(MostAmount) .. " " ..  MostStatistic),
+			Title = "Notification Title",
+			Content = tostring(MostPlayer) .. " has the most of that statistic(" .. tostring(MostAmount) .. ")",
+			Duration = 4,
+			Image = 4483362458,
+		})
+	end,
+})
+
+local MostCoins = BestTab:CreateButton({
+	Name = "Reveal who has the most Camp Wins",
+	Callback = function()
+		local Most = "CampWins"
+		local Players = game:GetService("Players")
+		local RS = game:GetService("ReplicatedStorage")
+		local Characters = RS.Season.Players:GetChildren()
+		local MostAmount = 0
+		local MostPlayer = "Nobody"
+
+		for i =1, #Characters do
+			if Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value > MostAmount then
+				MostAmount = Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value
+				MostPlayer = Characters[i].Value
+			end
+		end
+
+		Rayfield:Notify({
+			Title = "Notification Title",
+			Content = tostring(MostPlayer) .. " has the most of that statistic(" .. tostring(MostAmount) .. ")",
+			Duration = 4,
+			Image = 4483362458,
+		})
+	end,
+})
+
+local MostCoins = BestTab:CreateButton({
+	Name = "Reveal who has the most Movies Wins",
+	Callback = function()
+		local Most = "MoviesWins"
+		local Players = game:GetService("Players")
+		local RS = game:GetService("ReplicatedStorage")
+		local Characters = RS.Season.Players:GetChildren()
+		local MostAmount = 0
+		local MostPlayer = "Nobody"
+
+		for i =1, #Characters do
+			if Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value > MostAmount then
+				MostAmount = Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value
+				MostPlayer = Characters[i].Value
+			end
+		end
+
+		Rayfield:Notify({
+			Title = "Notification Title",
+			Content = tostring(MostPlayer) .. " has the most of that statistic(" .. tostring(MostAmount) .. ")",
+			Duration = 4,
+			Image = 4483362458,
+		})
+	end,
+})
+
+local MostCoins = BestTab:CreateButton({
+	Name = "Reveal who has the most Expedition Wins",
+	Callback = function()
+		local Most = "ExpeditionWins"
+		local Players = game:GetService("Players")
+		local RS = game:GetService("ReplicatedStorage")
+		local Characters = RS.Season.Players:GetChildren()
+		local MostAmount = 0
+		local MostPlayer = "Nobody"
+
+		for i =1, #Characters do
+			if Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value > MostAmount then
+				MostAmount = Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value
+				MostPlayer = Characters[i].Value
+			end
+		end
+
+		Rayfield:Notify({
+			Title = "Notification Title",
+			Content = tostring(MostPlayer) .. " has the most of that statistic(" .. tostring(MostAmount) .. ")",
+			Duration = 4,
+			Image = 4483362458,
+		})
+	end,
+})
+
+local MostCoins = BestTab:CreateButton({
+	Name = "Reveal who has the most Games Played",
+	Callback = function()
+		local Most = "GamesPlayed"
+		local Players = game:GetService("Players")
+		local RS = game:GetService("ReplicatedStorage")
+		local Characters = RS.Season.Players:GetChildren()
+		local MostAmount = 0
+		local MostPlayer = "Nobody"
+
+		for i =1, #Characters do
+			if Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value > MostAmount then
+				MostAmount = Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value
+				MostPlayer = Characters[i].Value
+			end
+		end
+
+		Rayfield:Notify({
+			Title = "Notification Title",
+			Content = tostring(MostPlayer) .. " has the most of that statistic(" .. tostring(MostAmount) .. ")",
+			Duration = 4,
+			Image = 4483362458,
+		})
+	end,
+})
+
+local MostCoins = BestTab:CreateButton({
+	Name = "Reveal who has the most Idols Found",
+	Callback = function()
+		local Most = "IdolsFound"
+		local Players = game:GetService("Players")
+		local RS = game:GetService("ReplicatedStorage")
+		local Characters = RS.Season.Players:GetChildren()
+		local MostAmount = 0
+		local MostPlayer = "Nobody"
+
+		for i =1, #Characters do
+			if Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value > MostAmount then
+				MostAmount = Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value
+				MostPlayer = Characters[i].Value
+			end
+		end
+
+		Rayfield:Notify({
+			Title = "Notification Title",
+			Content = tostring(MostPlayer) .. " has the most of that statistic(" .. tostring(MostAmount) .. ")",
+			Duration = 4,
+			Image = 4483362458,
+		})
+	end,
+})
+
+local MostCoins = BestTab:CreateButton({
+	Name = "Reveal who has the most Comeback Wins",
+	Callback = function()
+		local Most = "ComebackWins"
+		local Players = game:GetService("Players")
+		local RS = game:GetService("ReplicatedStorage")
+		local Characters = RS.Season.Players:GetChildren()
+		local MostAmount = 0
+		local MostPlayer = "Nobody"
+
+		for i =1, #Characters do
+			if Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value > MostAmount then
+				MostAmount = Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value
+				MostPlayer = Characters[i].Value
+			end
+		end
+
+		Rayfield:Notify({
+			Title = "Notification Title",
+			Content = tostring(MostPlayer) .. " has the most of that statistic(" .. tostring(MostAmount) .. ")",
+			Duration = 4,
+			Image = 4483362458,
+		})
+	end,
+})
+
+local MostCoins = BestTab:CreateButton({
+	Name = "Reveal who has the most Challenge Wins",
+	Callback = function()
+		local Most = "ChallengeWins"
+		local Players = game:GetService("Players")
+		local RS = game:GetService("ReplicatedStorage")
+		local Characters = RS.Season.Players:GetChildren()
+		local MostAmount = 0
+		local MostPlayer = "Nobody"
+
+		for i =1, #Characters do
+			if Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value > MostAmount then
+				MostAmount = Players:FindFirstChild(Characters[i].Name):WaitForChild('DataStore')[Most].Value
+				MostPlayer = Characters[i].Value
+			end
+		end
+
+		Rayfield:Notify({
+			Title = "Notification Title",
+			Content = tostring(MostPlayer) .. " has the most of that statistic(" .. tostring(MostAmount) .. ")",
 			Duration = 4,
 			Image = 4483362458,
 		})
