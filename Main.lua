@@ -41,59 +41,59 @@ local Window = Rayfield:CreateWindow({
 local Tab = Window:CreateTab("Main Tab", 4483362458) -- Title, Image
 
 local Coins = Tab:CreateButton({
-   Name = "Set statistic to Coins",
-   Callback = function()
-      statistic = "Coins"
-   end,
+	Name = "Set statistic to Coins",
+	Callback = function()
+		statistic = "Coins"
+	end,
 })
 
 local CampWins = Tab:CreateButton({
-   Name = "Set statistic to Camp Wins",
-   Callback = function()
-      statistic = "CampWins"
-   end,
+	Name = "Set statistic to Camp Wins",
+	Callback = function()
+		statistic = "CampWins"
+	end,
 })
 
 local MoviesWins = Tab:CreateButton({
-   Name = "Set statistic to Movies Wins",
-   Callback = function()
-      statistic = "MoviesWins"
-   end,
+	Name = "Set statistic to Movies Wins",
+	Callback = function()
+		statistic = "MoviesWins"
+	end,
 })
 
 local ExpeditionWins = Tab:CreateButton({
-   Name = "Set statistic to Expedition Wins",
-   Callback = function()
-      statistic = "ExpeditionWins"
-   end,
+	Name = "Set statistic to Expedition Wins",
+	Callback = function()
+		statistic = "ExpeditionWins"
+	end,
 })
 
 local GamesPlayed = Tab:CreateButton({
-   Name = "Set statistic to Games Played",
-   Callback = function()
-      statistic = "GamesPlayed"
-   end,
+	Name = "Set statistic to Games Played",
+	Callback = function()
+		statistic = "GamesPlayed"
+	end,
 })
 
 local IdolsFound = Tab:CreateButton({
-   Name = "Set statistic to Idols Found",
-   Callback = function()
-      statistic = "IdolsFound"
-   end,
+	Name = "Set statistic to Idols Found",
+	Callback = function()
+		statistic = "IdolsFound"
+	end,
 })
 
 local ComebackWins = Tab:CreateButton({
-   Name = "Set statistic to Comeback Wins",
-   Callback = function()
-      statistic = "ComebackWins"
-   end,
+	Name = "Set statistic to Comeback Wins",
+	Callback = function()
+		statistic = "ComebackWins"
+	end,
 })
 
 local ChallengeWins = Tab:CreateButton({
-   Name = "Set statistic to Challenge Wins",
-   Callback = function()
-      statistic = "ChallengeWins"
-   end,
+	Name = "Set statistic to Challenge Wins",
+	Callback = function()
+		statistic = "ChallengeWins"
+	end,
 })
 
 local NameToStatistic = Tab:CreateInput({
@@ -129,5 +129,33 @@ local NameToStatistic = Tab:CreateInput({
 				Image = 4483362458,
 			})
 		end
+	end,
+})
+
+local BestTab = Window:CreateTab("Misc", 4483362458) -- Title, Image
+
+local MostCoins = BestTab:CreateButton({
+	Name = "Button Example",
+	Callback = function()
+		local MostStatistic = "Coins"
+		local Players = game:GetService("Players")
+		local RS = game:GetService("ReplicatedStorage")
+		local Characters = RS.Season.Players:GetChildren()
+		local MostAmount = 0
+		local MostPlayer = "Nobody"
+		
+		for _, character in ipairs(Characters) do
+			if Players:FindFirstChild(character.Name):WaitForChild('DataStore')[MostStatistic].Value > MostAmount then
+				MostAmount = Players:FindFirstChild(character.Name):WaitForChild('DataStore')[MostStatistic].Value
+				MostPlayer = character.Value
+			end
+		end
+		
+		Rayfield:Notify({
+			Title = "Statistics Notification",
+			Content = MostPlayer .. " has " .. tostring(MostAmount) .. " " ..  MostStatistic),
+			Duration = 4,
+			Image = 4483362458,
+		})
 	end,
 })
